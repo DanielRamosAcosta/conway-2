@@ -24,4 +24,25 @@ describe("Map", () => {
       Cell.dead(),
     ])
   })
+
+  it.skip("retrieves alive neighbors", () => {
+    const map: Map = Map.create([
+      [Cell.alive(), Cell.dead(), Cell.dead()],
+      [Cell.dead(), Cell.dead(), Cell.dead()],
+      [Cell.dead(), Cell.dead(), Cell.dead()],
+    ])
+
+    const neighbors = map.neighborsOf(Coordinates.at(1, 1))
+
+    expect(neighbors).toEqual([
+      Cell.alive(),
+      Cell.dead(),
+      Cell.dead(),
+      Cell.dead(),
+      Cell.dead(),
+      Cell.dead(),
+      Cell.dead(),
+      Cell.dead(),
+    ])
+  })
 })
