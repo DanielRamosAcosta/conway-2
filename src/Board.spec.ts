@@ -14,4 +14,21 @@ describe("Board", () => {
 
     expect(nextBoard).toEqual(board)
   })
+
+  it("kills lonely cell", () => {
+    const board = Board.create([
+      [Cell.dead(), Cell.dead(), Cell.dead()],
+      [Cell.dead(), Cell.alive(), Cell.dead()],
+      [Cell.dead(), Cell.dead(), Cell.dead()],
+    ])
+    
+    const nextBoard = board.nextGeneration()
+    
+    const expected = Board.create([
+      [Cell.dead(), Cell.dead(), Cell.dead()],
+      [Cell.dead(), Cell.dead(), Cell.dead()],
+      [Cell.dead(), Cell.dead(), Cell.dead()],
+    ])
+    expect(nextBoard).toEqual(expected)
+  });
 })
