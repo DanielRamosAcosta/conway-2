@@ -1,20 +1,6 @@
-import { it, describe, expect } from "vitest"
-
-class Cell {
-  static dead() {
-    return new Cell()
-  }
-}
-
-class Board {
-  static create(cells: Array<Array<Cell>>): Board {
-    return new Board()
-  }
-
-  nextGeneration(): Board {
-    return this
-  }
-}
+import { describe, expect, it } from "vitest"
+import { Cell } from "./Cell.js"
+import { Board } from "./Board.js"
 
 describe("Board", () => {
   it("does nothing if all cells are dead", () => {
