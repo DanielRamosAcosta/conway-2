@@ -9,4 +9,12 @@ describe("Cell", () => {
 
     expect(isAlive).toEqual(true)
   })
+
+  it("creates a dead cell", () => {
+    const cell = Cell.dead()
+
+    const isAlive = Cell.isAlive()
+
+    expect(isAlive).toEqual(false)
+  })
 })
