@@ -1,26 +1,7 @@
-import { describe, it, expect } from "vitest"
-
-class Map {
-  static create(param: Cell[][]) {
-    return new Map()
-  }
-
-  neighborsOf(coordinates: Coordinates) {
-    return [Cell.dead(), Cell.dead(), Cell.dead(), Cell.dead(), Cell.dead(), Cell.dead(), Cell.dead(), Cell.dead()]
-  }
-}
-
-class Cell {
-  static dead(): Cell {
-    return new Cell()
-  }
-}
-
-class Coordinates {
-  static at(x: number, y: number) {
-    return new Coordinates()
-  }
-}
+import { describe, expect, it } from "vitest"
+import { Cell } from "./Cell.js"
+import { Coordinates } from "./Coordinates.js"
+import { Map } from "./Map.js"
 
 describe("Map", () => {
   it("can retrieve neighbors of a cell", () => {
