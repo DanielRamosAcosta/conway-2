@@ -5,7 +5,7 @@ describe("Cell", () => {
   it("creates an alive cell", () => {
     const cell = Cell.alive()
 
-    const isAlive = Cell.isAlive()
+    const isAlive = cell.isAlive()
 
     expect(isAlive).toEqual(true)
   })
@@ -13,7 +13,7 @@ describe("Cell", () => {
   it("creates a dead cell", () => {
     const cell = Cell.dead()
 
-    const isAlive = Cell.isAlive()
+    const isAlive = cell.isAlive()
 
     expect(isAlive).toEqual(false)
   })
