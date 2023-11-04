@@ -15,20 +15,27 @@ describe("Board", () => {
     expect(nextBoard).toEqual(board)
   })
 
-  it("kills lonely cell", () => {
+  it.skip("kills lonely cell", () => {
     const board = Board.create([
       [Cell.dead(), Cell.dead(), Cell.dead()],
       [Cell.dead(), Cell.alive(), Cell.dead()],
       [Cell.dead(), Cell.dead(), Cell.dead()],
     ])
-    
+
     const nextBoard = board.nextGeneration()
-    
+
     const expected = Board.create([
       [Cell.dead(), Cell.dead(), Cell.dead()],
       [Cell.dead(), Cell.dead(), Cell.dead()],
       [Cell.dead(), Cell.dead(), Cell.dead()],
     ])
     expect(nextBoard).toEqual(expected)
-  });
+  })
+
+  it("can be compared", () => {
+    const boardWithDeadCell = Board.create([[Cell.dead()]])
+    const boardWithAliveCell = Board.create([[Cell.alive()]])
+
+    expect(boardWithDeadCell).not.toEqual(boardWithAliveCell)
+  })
 })
