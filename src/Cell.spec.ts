@@ -1,0 +1,12 @@
+import { describe, expect, it } from "vitest"
+import { Cell } from "./Cell.js"
+
+describe("Cell", () => {
+  it("creates an alive cell", () => {
+    const cell = Cell.alive()
+
+    const isAlive = Cell.isAlive()
+
+    expect(isAlive).toEqual(true)
+  })
+})
