@@ -15,7 +15,7 @@ describe("Board", () => {
     expect(nextBoard).toEqual(board)
   })
 
-  it.skip("kills lonely cell", () => {
+  it("kills lonely cell", () => {
     const board = Board.create([
       [Cell.dead(), Cell.dead(), Cell.dead()],
       [Cell.dead(), Cell.alive(), Cell.dead()],
