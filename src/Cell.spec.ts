@@ -19,20 +19,22 @@ describe("Cell", () => {
     expect(alive.isAlive()).toBe(true)
   })
 
-  it("kill a lonely cell", () => {
-    const alive = Cell.alive()
+  describe("kills a dead when", () => {
+    it("kill a lonely cell", () => {
+      const alive = Cell.alive()
 
-    const dead = alive.nextGeneration([
-      Cell.dead(),
-      Cell.dead(),
-      Cell.dead(),
-      Cell.dead(),
-      Cell.dead(),
-      Cell.dead(),
-      Cell.dead(),
-      Cell.dead(),
-    ])
+      const dead = alive.nextGeneration([
+        Cell.dead(),
+        Cell.dead(),
+        Cell.dead(),
+        Cell.dead(),
+        Cell.dead(),
+        Cell.dead(),
+        Cell.dead(),
+        Cell.dead(),
+      ])
 
-    expect(dead.isAlive()).toBe(false)
+      expect(dead.isAlive()).toBe(false)
+    })
   })
 })
